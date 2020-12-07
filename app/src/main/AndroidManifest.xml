@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OldAndNewCodes2020">
-        <activity android:name=".modern.ModernActivity"></activity>
-        <activity android:name=".old.OldActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".modern.ModernActivity"
+            android:label="ModernActivity" />
+        <activity
+            android:name=".old.OldActivity"
+            android:label="OldActivity" />
     </application>
 
 </manifest>
