@@ -24,10 +24,10 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
+        binding.goToOldButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_oldActivity)
         }
-        binding.button2.setOnClickListener {
+        binding.goToModernButton.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_modernActivity)
         }
     }
