@@ -9,6 +9,16 @@
         android:id="@+id/mainFragment"
         android:name="com.example.oldandnewcodes2020.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_oldActivity"
+            app:destination="@id/oldActivity" />
+    </fragment>
+
+    <activity
+        android:id="@+id/oldActivity"
+        android:name="com.example.oldandnewcodes2020.old.OldActivity"
+        android:label="activity_old"
+        tools:layout="@layout/activity_old" />
 
 </navigation>
