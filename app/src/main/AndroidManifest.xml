@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OldAndNewCodes2020">
+        <activity android:name=".modern.ModernActivity"></activity>
         <activity android:name=".old.OldActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
