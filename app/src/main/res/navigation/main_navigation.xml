@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_oldActivity"
             app:destination="@id/oldActivity" />
+        <action
+            android:id="@+id/action_mainFragment_to_modernActivity"
+            app:destination="@id/modernActivity" />
     </fragment>
 
     <activity
@@ -20,5 +23,11 @@
         android:name="com.example.oldandnewcodes2020.old.OldActivity"
         android:label="activity_old"
         tools:layout="@layout/activity_old" />
+
+    <activity
+        android:id="@+id/modernActivity"
+        android:name="com.example.oldandnewcodes2020.modern.ModernActivity"
+        android:label="activity_modern"
+        tools:layout="@layout/activity_modern" />
 
 </navigation>
