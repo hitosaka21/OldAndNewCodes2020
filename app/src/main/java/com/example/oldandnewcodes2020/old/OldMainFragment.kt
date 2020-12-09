@@ -11,10 +11,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.oldandnewcodes2020.R
+import com.example.oldandnewcodes2020.SelectActivity
 import kotlinx.android.synthetic.main.fragment_old_main.*
 
 class OldMainFragment : Fragment() {
-    private val REQUEST_CODE = 1
+    private val REQUEST_CODE_GET_IMAGE = 1
+    private val REQUEST_CODE_LAUNCH_ACTIVITY = 2
 
     private var message: String? = null
     private var textView: TextView? = null
@@ -43,7 +45,12 @@ class OldMainFragment : Fragment() {
             val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
                 type = "image/*"
             }
-            startActivityForResult(intent, REQUEST_CODE)
+            startActivityForResult(intent, REQUEST_CODE_GET_IMAGE)
+        }
+
+        old_launch_activity_button.setOnClickListener {
+            val intent = Intent(activity, SelectActivity::class.java)
+            startActivityForResult(intent, REQUEST_CODE_LAUNCH_ACTIVITY)
         }
     }
 
@@ -56,8 +63,16 @@ class OldMainFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+        if (requestCode == REQUEST_CODE_GET_IMAGE && resultCode == Activity.RESULT_OK) {
             Log.d(this::class.simpleName, "return uri = ${data?.data}")
+        }
+
+        if (requestCode == REQUEST_CODE_LAUNCH_ACTIVITY) {
+            if (resultCode == Activity.RESULT_OK) {
+                Log.d(this::class.simpleName, "RESULT_OK")
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                Log.d(this::class.simpleName, "RESULT_CANCELED")
+            }
         }
     }
 }
