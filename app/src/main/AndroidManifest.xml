@@ -22,6 +22,9 @@
         <activity
             android:name=".old.OldActivity"
             android:label="OldActivity" />
+        <activity
+            android:name=".SelectActivity"
+            android:label="SelectActivity" />
     </application>
 
 </manifest>
