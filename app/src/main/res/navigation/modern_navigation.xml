@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/modern_navigation"
-    app:startDestination="@id/oldMainFragment">
-
+    app:startDestination="@id/modernMainFragment">
     <fragment
-        android:id="@+id/oldMainFragment"
-        android:name="com.example.oldandnewcodes2020.old.OldMainFragment"
+        android:id="@+id/modernMainFragment"
+        android:name="com.example.oldandnewcodes2020.modern.ModernMainFragment"
         android:label="fragment_modern_main"
         tools:layout="@layout/fragment_modern_main" />
 </navigation>

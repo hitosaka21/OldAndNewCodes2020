@@ -24,7 +24,7 @@ class ModernMainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.oldMainButton.setOnClickListener {
+        binding.modernMainButton.setOnClickListener {
             Toast.makeText(context, "SHOW TOAST", Toast.LENGTH_SHORT).show()
         }
     }
