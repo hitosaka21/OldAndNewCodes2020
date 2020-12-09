@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.launch
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -43,6 +44,15 @@ class ModernMainFragment : Fragment() {
                 Log.d(ModernMainFragment::class.simpleName, "RESULT_CANCELED")
 
             }
+        }
+
+    private val customActivityResultContract =
+        registerForActivityResult(CustomActivityResultContract()) { customResult ->
+            // use CustomResult Instance
+            Log.d(
+                ModernMainFragment::class.simpleName,
+                "customResult.isResultOk = ${customResult.isResultOk}"
+            )
         }
 
     override fun onAttach(context: Context) {
@@ -89,8 +99,10 @@ class ModernMainFragment : Fragment() {
         }
 
         binding.launchActivityButton.setOnClickListener {
-            val intent = Intent(activity, SelectActivity::class.java)
-            startForResult.launch(intent)
+//            val intent = Intent(activity, SelectActivity::class.java)
+//            startForResult.launch(intent)
+
+            customActivityResultContract.launch()
         }
     }
 
