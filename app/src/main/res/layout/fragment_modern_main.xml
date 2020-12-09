@@ -19,11 +19,21 @@
 
     <Button
         android:id="@+id/modern_main_button"
-        android:text="SHOW TOAST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="SHOW TOAST"
+        app:layout_constraintBottom_toTopOf="@+id/modern_get_image_uri_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modern_main_text_view" />
+
+    <Button
+        android:id="@+id/modern_get_image_uri_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET IMAGE URI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modern_main_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

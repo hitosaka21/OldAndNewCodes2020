@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -24,6 +25,12 @@ class ModernMainFragment : Fragment() {
 
     private var message: String? = null
     private var textView: TextView? = null
+
+    private val activityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+            // Handle the return Uri
+            Log.d(ModernMainFragment::class.simpleName, "return uri = $uri")
+        }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -62,6 +69,10 @@ class ModernMainFragment : Fragment() {
 
         binding.modernMainButton.setOnClickListener {
             Toast.makeText(context, "SHOW TOAST", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.modernGetImageUriButton.setOnClickListener {
+            activityResultLauncher.launch("image/*")
         }
     }
 
