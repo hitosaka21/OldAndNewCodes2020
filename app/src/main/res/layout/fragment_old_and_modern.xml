@@ -8,42 +8,42 @@
     tools:ignore="HardcodedText">
 
     <TextView
-        android:id="@+id/old_main_text_view"
+        android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Blank Fragment"
-        app:layout_constraintBottom_toTopOf="@+id/old_main_button"
+        app:layout_constraintBottom_toTopOf="@+id/show_toast_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/old_main_button"
+        android:id="@+id/show_toast_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SHOW TOAST"
-        app:layout_constraintBottom_toTopOf="@+id/old_get_image_uri_button"
+        app:layout_constraintBottom_toTopOf="@+id/get_image_uri_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/old_main_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
 
     <Button
-        android:id="@+id/old_get_image_uri_button"
+        android:id="@+id/get_image_uri_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET IMAGE URI"
-        app:layout_constraintBottom_toTopOf="@id/old_launch_activity_button"
+        app:layout_constraintBottom_toTopOf="@id/launch_activity_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/old_main_button" />
+        app:layout_constraintTop_toBottomOf="@+id/show_toast_button" />
 
     <Button
-        android:id="@+id/old_launch_activity_button"
+        android:id="@+id/launch_activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LAUNCH ACTIVITY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/old_get_image_uri_button" />
+        app:layout_constraintTop_toBottomOf="@+id/get_image_uri_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,11 +17,11 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import com.example.oldandnewcodes2020.R
 import com.example.oldandnewcodes2020.SelectActivity
-import com.example.oldandnewcodes2020.databinding.FragmentModernMainBinding
+import com.example.oldandnewcodes2020.databinding.FragmentOldAndModernBinding
 
 class ModernMainFragment : Fragment() {
 
-    private var _binding: FragmentModernMainBinding? = null
+    private var _binding: FragmentOldAndModernBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var lifecycleObserver: LifecycleObserver
@@ -71,24 +71,24 @@ class ModernMainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentModernMainBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentOldAndModernBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        textView = view.findViewById(R.id.modern_main_text_view)
+        textView = view.findViewById(R.id.title_text_view)
 
-        binding.modernMainButton.setOnClickListener {
+        binding.showToastButton.setOnClickListener {
             Toast.makeText(context, "SHOW TOAST", Toast.LENGTH_SHORT).show()
         }
 
-        binding.modernGetImageUriButton.setOnClickListener {
+        binding.getImageUriButton.setOnClickListener {
             activityResultLauncher.launch("image/*")
         }
 
-        binding.modernLaunchActivityButton.setOnClickListener {
+        binding.launchActivityButton.setOnClickListener {
             val intent = Intent(activity, SelectActivity::class.java)
             startForResult.launch(intent)
         }

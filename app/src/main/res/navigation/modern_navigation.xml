@@ -8,5 +8,5 @@
         android:id="@+id/modernMainFragment"
         android:name="com.example.oldandnewcodes2020.modern.ModernMainFragment"
         android:label="fragment_modern_main"
-        tools:layout="@layout/fragment_modern_main" />
+        tools:layout="@layout/fragment_old_and_modern" />
 </navigation>
