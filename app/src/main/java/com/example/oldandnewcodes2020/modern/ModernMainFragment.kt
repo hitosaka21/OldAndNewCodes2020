@@ -1,6 +1,8 @@
 package com.example.oldandnewcodes2020.modern
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import com.example.oldandnewcodes2020.R
+import com.example.oldandnewcodes2020.SelectActivity
 import com.example.oldandnewcodes2020.databinding.FragmentModernMainBinding
 
 class ModernMainFragment : Fragment() {
@@ -30,6 +33,16 @@ class ModernMainFragment : Fragment() {
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             // Handle the return Uri
             Log.d(ModernMainFragment::class.simpleName, "return uri = $uri")
+        }
+
+    private val startForResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                Log.d(ModernMainFragment::class.simpleName, "RESULT_OK")
+            } else if (result.resultCode == Activity.RESULT_CANCELED) {
+                Log.d(ModernMainFragment::class.simpleName, "RESULT_CANCELED")
+
+            }
         }
 
     override fun onAttach(context: Context) {
@@ -73,6 +86,11 @@ class ModernMainFragment : Fragment() {
 
         binding.modernGetImageUriButton.setOnClickListener {
             activityResultLauncher.launch("image/*")
+        }
+
+        binding.modernLaunchActivityButton.setOnClickListener {
+            val intent = Intent(activity, SelectActivity::class.java)
+            startForResult.launch(intent)
         }
     }
 
